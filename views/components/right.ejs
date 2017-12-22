@@ -1,0 +1,20 @@
+<div id="right">
+    <!-- 搜索栏 -->
+    <div class="search-main">
+      <form name="bf" onsubmit="bottomForm()" class="search-submit">
+        <input type="submit" value="" class="search-button">
+        <input name="key" class="search-input" placeholder="Hey,what's up"> 
+      </form>
+    </div>
+    <!-- 文章栏 -->
+    <div class = "container-fluid">
+      <div class = "row">
+  
+        <% posts.forEach(function (post) { %>
+        <%- include('post-container',{post:post}) %>
+  
+        <% }) %>
+  
+      </div>
+    </div>
+  </div>

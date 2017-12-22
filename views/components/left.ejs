@@ -1,0 +1,87 @@
+<div id="left-bg"></div>
+<div id="left">
+    <!-- 退出登录 按钮  效果未做完 -->
+
+    <% if (user) { %>
+    <div style="height:80px">
+        <!-- <div class="nav-setting">
+            <div class="ui buttons">
+              <div class="ui floating dropdown button">
+                <i class="icon bars"></i>
+                <div class="menu">
+                  <% if (user) { %>
+                    <a class="item" href="/posts?author=<%= user._id %>">个人主页</a>
+                    <div class="divider"></div>
+                    <a class="item" href="/posts/create">发表文章</a>
+                    <a class="item" href="/signout">登出</a>
+                  <% } else { %>
+                    <a class="item" href="/signin">登录</a>
+                    <a class="item" href="/signup">注册</a>
+                  <% } %>
+                </div>
+              </div>
+            </div>
+          </div> -->
+        <button type="button" class="logout btn-lg" >
+            <a class="glyphicon glyphicon-off " href="/signout" ></a>
+        </button>
+    </div>
+    <!-- 头像板块 -->
+    <div style="height:170px">
+      <div class="center-block head-container">
+          <img class="img-circle img-responsive "  src="/img/<%= user.avatar %>">
+      </div>
+    </div>
+    <!-- 菜单栏 -->
+    <ul class="bmenu">
+      <li><a href="/notice">备忘录</a></li>
+      <li><a href="/posts/create">写点啥</a></li>
+      <li><a href="/posts?author=<%= user._id %>">个人主页</a></li>
+      <li><a href="/posts">博客</a></li>
+    </ul>
+    <% } else { %>
+
+      <div style="height:150px"></div>
+          <form class="ui form " method="post" style="padding:30px">
+            <div class="field required" >
+              <!-- <label>用户名</label> -->
+              <input style="height:50px;border-radius:5px" placeholder="用户名" type="text" name="name">
+            </div>
+            <div class="field required" >
+              <!-- <label>密码</label> -->
+              <input style="height:50px ;border-radius:5px;margin-top:20px" placeholder="密码" type="password" name="password">
+            </div>
+            <input type="submit" class="btn btn-primary btn-lg btn-block"  style="margin-top:30px" value="登录">
+            <a href="/signup" class="btn btn-signup btn-lg btn-block" style="margin-top:20px;font-size:15px">注册</a>
+          </form>  
+          
+    <% } %>
+
+
+
+
+    
+    <!-- logo -->
+    <!-- <div class="container-fluid" style="margin-top:100px">
+      <div class="icon-main">
+        <button class="icon-move btn">
+          <img src="public/wechat.jpg" alt="" class="img-rounded">
+        </button>
+      </div>
+      <div class="icon-main">
+          <button class="icon-move btn">
+            <img src="public/qq.jpg" alt="" class="img-rounded">
+          </button>
+      </div>
+      <div class="icon-main">
+          <button class="icon-move btn">
+            <img src="public/sina.jpg" alt="" class="img-rounded">
+          </button>
+      </div>
+      <div class="icon-main">
+          <button class="icon-move btn">
+            <img src="public/tumblr.jpg" alt="" class="img-rounded">
+          </button>
+        </div>
+    </div>-->
+  </div> 
